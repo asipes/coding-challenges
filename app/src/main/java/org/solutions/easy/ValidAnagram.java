@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 /**
  * <a href="https://leetcode.com/problems/valid-anagram/">...</a>
+ * 1 ms - beats 99.86%
+ * 43.03 mb - beats 80.40%
  */
 
 public class ValidAnagram {
