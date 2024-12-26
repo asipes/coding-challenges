@@ -21,7 +21,7 @@ dependencies {
     implementation(libs.guava)
 
     // test
-    testImplementation("org.hamcrest:hamcrest:2.2") // Hamcrest для тестов
+    testImplementation("org.assertj:assertj-core:3.27.0")
 }
 
 testing {
