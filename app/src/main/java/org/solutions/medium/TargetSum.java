@@ -1,26 +1,34 @@
 package org.solutions.medium;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * <a href="https://leetcode.com/problems/target-sum">...</a>
  */
 
 public class TargetSum {
     public int findTargetSumWays(int[] nums, int target) {
-        return findTargetSumWays(nums, target, 0, 0);
-    }
+        Map<Integer, Integer> counts = new HashMap<>();
+        counts.put(0, 1);
 
-    private int findTargetSumWays(int[] nums, int target, int sum, int index) {
-        if (nums.length == index) {
-            if (sum == target) {
-                return 1;
-            } else {
-                return 0;
+        for (int num : nums) {
+            Map<Integer, Integer> current = new HashMap<>();
+
+            for (Map.Entry<Integer, Integer> entry : counts.entrySet()) {
+                int add = entry.getKey() + num;
+                int subtract = entry.getKey() - num;
+                int count = entry.getValue();
+
+                current.put(add, current.getOrDefault(add, 0) + count);
+                current.put(subtract, current.getOrDefault(subtract, 0) + count);
             }
+
+            current.forEach((key, value) ->
+                    counts.merge(key, value, (v1, v2) -> v2)
+            );
         }
 
-        int add = findTargetSumWays(nums, target, sum + nums[index], index + 1);
-        int subtract = findTargetSumWays(nums, target, sum - nums[index], index + 1);
-
-        return add + subtract;
+        return counts.getOrDefault(target, 0);
     }
 }
