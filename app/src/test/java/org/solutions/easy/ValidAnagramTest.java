@@ -10,8 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ValidAnagramTest {
 
-
-
     @ParameterizedTest
     @MethodSource("provideAnagramTestCases")
     void isAnagram(String s, String t, boolean expected) {

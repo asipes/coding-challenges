@@ -1,6 +1,5 @@
 package org.solutions.easy;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -12,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CheckIfNAndItsDoubleExistTest {
 
     @ParameterizedTest
-    @MethodSource("provideAnagramTestCases")
+    @MethodSource("provideCheckIfExistTestCases")
     void checkIfExist(int[] arr, boolean expected) {
         CheckIfNAndItsDoubleExist checkIfNAndItsDoubleExist = new CheckIfNAndItsDoubleExist();
         var actual = checkIfNAndItsDoubleExist.checkIfExist(arr);
@@ -20,7 +19,7 @@ class CheckIfNAndItsDoubleExistTest {
         assertEquals(expected, actual);
     }
 
-    static Stream<Arguments> provideAnagramTestCases() {
+    static Stream<Arguments> provideCheckIfExistTestCases() {
         return Stream.of(
                 Arguments.of(new int[]{10, 2, 5, 3}, true),
                 Arguments.of(new int[]{7, 1, 14, 11}, true),
