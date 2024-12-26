@@ -13,7 +13,6 @@ public class MissingNumber {
     public int missingNumber(int[] nums) {
         int low = 0;
         int high = nums.length - 1;
-        Arrays.fill(nums, -1);
 
         Arrays.sort(nums);
 

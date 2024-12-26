@@ -19,6 +19,9 @@ repositories {
 dependencies {
     // This dependency is used by the application.
     implementation(libs.guava)
+
+    // test
+    testImplementation("org.hamcrest:hamcrest:2.2") // Hamcrest для тестов
 }
 
 testing {
