@@ -7,7 +7,7 @@ package org.solutions.easy;
 public class ArrangingCoins {
     public int arrangeCoins(int n) {
         int low = 1;
-        int high = n;
+        int high = Math.min(n , (int) Math.sqrt(2L * n)); // финальное значение не может превышать корень из 2n
 
         while (low <= high) {
             long mid = low + (high - low) / 2;
