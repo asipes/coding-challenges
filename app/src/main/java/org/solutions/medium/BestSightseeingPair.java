@@ -14,6 +14,7 @@ public class BestSightseeingPair {
         int left = values[0];
 
         for (int i = 1; i < values.length; i++) {
+            // Просто воткнуть ифы в два раза эффективнее по времени
             score = Math.max(score, left + values[i] - i);
             left = Math.max(left, values[i] + i);
         }
