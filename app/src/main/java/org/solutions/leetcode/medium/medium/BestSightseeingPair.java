@@ -1,4 +1,4 @@
-package org.solutions.leetcode.easy.medium;
+package org.solutions.leetcode.medium.medium;
 
 /**
  * <a href="https://leetcode.com/problems/best-sightseeing-pair/">1014. Best Sightseeing Pair: 4ms(89.46%), 53.63mb(32.43%)</a>
