@@ -34,4 +34,34 @@ public class TreeProvider {
 
         return root;
     }
+
+
+    public static TreeNode buildBST(Integer[] arr) {
+        if (arr == null || arr.length == 0) {
+            return null;
+        }
+
+        TreeNode root = null;
+        for (Integer val : arr) {
+            if (val != null) {
+                root = insertIntoBST(root, val);
+            }
+        }
+
+        return root;
+    }
+
+    private static TreeNode insertIntoBST(TreeNode root, int val) {
+        if (root == null) {
+            return new TreeNode(val);
+        }
+
+        if (val < root.val) {
+            root.left = insertIntoBST(root.left, val);
+        } else {
+            root.right = insertIntoBST(root.right, val);
+        }
+
+        return root;
+    }
 }
