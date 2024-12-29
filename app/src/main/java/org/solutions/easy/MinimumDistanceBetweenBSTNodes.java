@@ -4,12 +4,8 @@ import org.model.TreeNode;
 
 import java.util.Stack;
 
-/**
- * <a href="https://leetcode.com/problems/minimum-absolute-difference-in-bst">530. Minimum Absolute Difference in BST: 0ms(100.00%), 45.07(5.91%)</a>
- */
-
-public class MinimumAbsoluteDifferenceInBST {
-    public int getMinimumDifference(TreeNode root) {
+public class MinimumDistanceBetweenBSTNodes {
+    public int minDiffInBST(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
         TreeNode current = root;
         int prev = root.val;
