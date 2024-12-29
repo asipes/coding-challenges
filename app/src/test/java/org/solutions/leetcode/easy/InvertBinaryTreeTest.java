@@ -3,7 +3,6 @@ package org.solutions.leetcode.easy;
 import org.junit.jupiter.api.Test;
 import org.model.TreeNode;
 import org.providers.TreeProvider;
-import org.solutions.leetcode.easy.InvertBinaryTree;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
