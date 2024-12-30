@@ -19,11 +19,11 @@ public class MaximumDepthOfNAryTree {
             for (int i = 0; i < size; i++) {
                 Node node = searchQueue.poll();
 
-                if (node.children == null) {
+                if (node != null && node.children == null) {
                     continue;
                 }
-                for (Node childrenNode : node.children) {
-                    searchQueue.add(childrenNode);
+                if (node != null) {
+                    searchQueue.addAll(node.children);
                 }
             }
         }
