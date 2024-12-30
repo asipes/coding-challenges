@@ -1,7 +1,6 @@
 package org.solutions.leetcode.medium;
 
 import org.junit.jupiter.api.Test;
-import org.solutions.leetcode.medium.medium.TargetSum;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
