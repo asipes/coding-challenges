@@ -1,7 +1,5 @@
 package org.solutions.leetcode.medium;
 
-import java.util.Arrays;
-
 /**
  * <a href="https://leetcode.com/problems/unique-length-3-palindromic-subsequences">1930. Unique Length-3 Palindromic Subsequences: 40ms(87.21%), 45.49(60.57%)</a>
  */
