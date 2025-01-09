@@ -2,6 +2,7 @@ package org.solutions.leetcode.easy;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -11,7 +12,7 @@ import java.util.List;
 public class StringMatchingInAnArray {
     public List<String> stringMatching(String[] words) {
         int n = words.length;
-        Arrays.sort(words, (a, b) -> Integer.compare(a.length(), b.length()));
+        Arrays.sort(words, Comparator.comparingInt(String::length));
         List<String> res = new ArrayList<>();
 
         for (int i = 0; i < n; i++) {
