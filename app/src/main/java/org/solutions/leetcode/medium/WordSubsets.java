@@ -11,21 +11,26 @@ import java.util.stream.Stream;
 
 public class WordSubsets {
     public List<String> wordSubsets(String[] words1, String[] words2) {
-        List<Map<Character, Integer>> freq = Stream.of(words2)
+        Map<Character, Integer> freq = Stream.of(words2)
                 .map(word -> word.chars()
                         .mapToObj(c -> (char) c)
                         .collect(Collectors.groupingBy(
                                 c -> c,
                                 Collectors.summingInt(c -> 1)
                         )))
-                .collect(Collectors.toList());
+                .flatMap(map -> map.entrySet().stream())
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        Math::max
+                ));
 
         return Stream.of(words1)
                 .filter(word -> isUniversal(word, freq))
                 .collect(Collectors.toList());
     }
 
-    private boolean isUniversal(String s, List<Map<Character, Integer>> freq) {
+    private boolean isUniversal(String s, Map<Character, Integer> freq) {
         Map<Character, Integer> wordFreq = s.chars()
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(
@@ -33,9 +38,8 @@ public class WordSubsets {
                         Collectors.summingInt(c -> 1)
                 ));
 
-        return freq.stream()
-                .allMatch(word -> word.entrySet().stream()
-                        .allMatch(entry ->
-                                wordFreq.getOrDefault(entry.getKey(), 0) >= entry.getValue()));
+        return freq.entrySet().stream()
+                .allMatch(entry ->
+                        wordFreq.getOrDefault(entry.getKey(), 0) >= entry.getValue());
     }
 }
