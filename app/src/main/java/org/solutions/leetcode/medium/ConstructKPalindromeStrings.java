@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * <a href="https://leetcode.com/problems/construct-k-palindrome-strings">1400. Construct K Palindrome Strings</a>
  * 6ms(44.96%)
- * 45.93MB(5.40%)
+ * 45.74MB(11.51%)
  */
 
 public class ConstructKPalindromeStrings {
@@ -14,6 +14,9 @@ public class ConstructKPalindromeStrings {
         
         if (n < k) {
             return false;
+        }
+        if (n == k) {
+            return true;
         }
         
         int[] freq = new int[26];
