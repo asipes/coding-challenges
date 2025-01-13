@@ -14,11 +14,9 @@ class FindLargestValueInEachTreeRowTest {
     void largestValues() {
         Integer[] arr = {1,3,2,5,3,null,9};
         TreeNode root = TreeProvider.buildTree(arr);
-
         FindLargestValueInEachTreeRow findLargestValueInEachTreeRow = new FindLargestValueInEachTreeRow();
         List<Integer> actual = findLargestValueInEachTreeRow.largestValues(root);
         List<Integer> expected = List.of(1,3,9);
-
         assertEquals(expected, actual);
     }
 }
