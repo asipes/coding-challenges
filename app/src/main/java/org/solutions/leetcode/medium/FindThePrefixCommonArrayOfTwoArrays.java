@@ -1,5 +1,9 @@
 package org.solutions.leetcode.medium;
 
+/**
+ * <a href="https://leetcode.com/problems/find-the-prefix-common-array-of-two-arrays">2657. Find the Prefix Common Array of Two Arrays</a>
+ */
+
 public class FindThePrefixCommonArrayOfTwoArrays {
     public int[] findThePrefixCommonArray(int[] A, int[] B) {
         int n = A.length;
