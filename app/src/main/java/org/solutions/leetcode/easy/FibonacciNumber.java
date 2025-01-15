@@ -1,4 +1,4 @@
-package org.solutions.leetcode.medium;
+package org.solutions.leetcode.easy;
 
 /**
  * <a href="https://leetcode.com/problems/fibonacci-number">509. Fibonacci Number</a>
