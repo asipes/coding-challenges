@@ -10,14 +10,10 @@ public class PowerOfFour {
             return false;
         }
 
-        if (n == 1) {
-            return true;
+        while (n % 4 == 0) {
+            n /= 4;
         }
 
-        if (n >= 4) {
-            return n % 4 == 0 && isPowerOfFour(n / 4);
-        } else {
-            return false;
-        }
+        return n == 1;
     }
 }
