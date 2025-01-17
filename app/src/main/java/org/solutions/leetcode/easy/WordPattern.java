@@ -20,10 +20,7 @@ public class WordPattern {
             uniqueChars.add(c);
         }
 
-        Set<String> uniqueWords = new HashSet<>();
-        for (String word : words) {
-            uniqueWords.add(word);
-        }
+        Set<String> uniqueWords = new HashSet<>(Arrays.asList(words));
 
         if (uniqueChars.size() != uniqueWords.size()) {
             return false;
