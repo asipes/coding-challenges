@@ -34,30 +34,6 @@ public class MinimumCostToMakeAtLeastOneValidPathInAGrid {
                 return cost;
             }
 
-            if (i < n - 1) {
-                int newCost = (grid[i][j] == down) ? cost : cost + 1;
-                if (newCost < visited[i + 1][j]) {
-                    visited[i + 1][j] = newCost;
-                    if (grid[i][j] == down) {
-                        deque.addFirst(new int[]{i + 1, j, newCost});
-                    } else {
-                        deque.addLast(new int[]{i + 1, j, newCost});
-                    }
-                }
-            }
-
-            if (i > 0) {
-                int newCost = (grid[i][j] == up) ? cost : cost + 1;
-                if (newCost < visited[i - 1][j]) {
-                    visited[i - 1][j] = newCost;
-                    if (grid[i][j] == up) {
-                        deque.addFirst(new int[]{i - 1, j, newCost});
-                    } else {
-                        deque.addLast(new int[]{i - 1, j, newCost});
-                    }
-                }
-            }
-
             if (j < m - 1) {
                 int newCost = (grid[i][j] == right) ? cost : cost + 1;
                 if (newCost < visited[i][j + 1]) {
@@ -82,6 +58,29 @@ public class MinimumCostToMakeAtLeastOneValidPathInAGrid {
                 }
             }
 
+            if (i < n - 1) {
+                int newCost = (grid[i][j] == down) ? cost : cost + 1;
+                if (newCost < visited[i + 1][j]) {
+                    visited[i + 1][j] = newCost;
+                    if (grid[i][j] == down) {
+                        deque.addFirst(new int[]{i + 1, j, newCost});
+                    } else {
+                        deque.addLast(new int[]{i + 1, j, newCost});
+                    }
+                }
+            }
+
+            if (i > 0) {
+                int newCost = (grid[i][j] == up) ? cost : cost + 1;
+                if (newCost < visited[i - 1][j]) {
+                    visited[i - 1][j] = newCost;
+                    if (grid[i][j] == up) {
+                        deque.addFirst(new int[]{i - 1, j, newCost});
+                    } else {
+                        deque.addLast(new int[]{i - 1, j, newCost});
+                    }
+                }
+            }
         }
 
         return -1;
