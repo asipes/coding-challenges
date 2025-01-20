@@ -12,4 +12,5 @@ plugins {
 }
 
 rootProject.name = "coding-challenges"
-include("app")
+include("java")
+project(":java").projectDir = file("java")
