@@ -17,7 +17,7 @@ func TestLongestPalindrome(t *testing.T) {
 			want: 7,
 		},
 		{
-			name: "Case 1",
+			name: "Case 2",
 			s:    "a",
 			want: 1,
 		},
