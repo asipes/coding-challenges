@@ -14,3 +14,4 @@ plugins {
 rootProject.name = "coding-challenges"
 include("java")
 project(":java").projectDir = file("java")
+include("sql")
