@@ -1,4 +1,4 @@
-package solutions.leetcode.easy
+package solutions.leetcode
 
 import SQLTest
 import org.junit.jupiter.api.Assertions
@@ -16,7 +16,7 @@ class BigCountries : SQLTest() {
     fun `find big countries`() {
         executeSqlFile(connection, "sql/big_countries_setup.sql")
 
-        val actual = executeQuery(connection, "sql/big_countries_query.sql")
+        val actual = executeQuery(connection, "sql/select/big_countries_query.sql")
 
         val expected = listOf(
             mapOf(

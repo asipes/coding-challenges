@@ -1,4 +1,4 @@
-package solutions.leetcode.easy
+package solutions.leetcode
 
 import SQLTest
 import org.junit.jupiter.api.Assertions
@@ -12,7 +12,7 @@ class FindCustomerReferee : SQLTest() {
     fun `find customer referee`() {
         executeSqlFile(connection, "sql/find_customer_referee_setup.sql")
 
-        val actual = executeQuery(connection, "sql/find_customer_referee_query.sql")
+        val actual = executeQuery(connection, "sql/select/find_customer_referee_query.sql")
         val expected = listOf(
             mapOf("name" to "Will"),
             mapOf("name" to "Jane"),

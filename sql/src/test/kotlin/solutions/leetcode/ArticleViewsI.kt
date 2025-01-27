@@ -1,4 +1,4 @@
-package solutions.leetcode.easy
+package solutions.leetcode
 
 import SQLTest
 import org.junit.jupiter.api.Assertions
@@ -12,7 +12,7 @@ class ArticleViewsI : SQLTest() {
     fun `find self viewed`() {
         executeSqlFile(connection, "sql/article_views_i_setup.sql")
 
-        val actual = executeQuery(connection, "sql/article_views_i_query.sql")
+        val actual = executeQuery(connection, "sql/select/article_views_i_query.sql")
 
         val expected = listOf(
             mapOf("id" to 4),
