@@ -1,43 +1,12 @@
 package solutions.leetcode.easy
 
-import org.junit.jupiter.api.*
-import org.testcontainers.containers.PostgreSQLContainer
-import org.testcontainers.junit.jupiter.Container
-import org.testcontainers.junit.jupiter.Testcontainers
+import SQLTest
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
 import ru.asipes.utils.DatabaseUtils.executeQuery
 import ru.asipes.utils.DatabaseUtils.executeSqlFile
-import java.sql.Connection
-import java.sql.DriverManager
 
-@Testcontainers
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class FindCustomerReferee {
-    companion object {
-        @Container
-        private val postgreSQLContainer = PostgreSQLContainer<Nothing>("postgres:15").apply {
-            withDatabaseName("test_db")
-            withUsername("postgres")
-            withPassword("postgres")
-        }
-    }
-
-    // docker run --name leetcode-pg -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=leetcode_db -p 5432:5432 -d postgres
-
-    private lateinit var connection: Connection
-
-    @BeforeAll
-    fun setupDatabase() {
-        connection = DriverManager.getConnection(
-            postgreSQLContainer.jdbcUrl,
-            postgreSQLContainer.username,
-            postgreSQLContainer.password,
-        )
-    }
-
-    @AfterAll
-    fun tearDown() {
-        connection.close()
-    }
+class FindCustomerReferee : SQLTest() {
 
     @Test
     fun `find customer referee`() {
