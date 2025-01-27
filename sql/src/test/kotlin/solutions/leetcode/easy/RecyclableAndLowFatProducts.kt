@@ -11,7 +11,6 @@ class RecyclableAndLowFatProducts : SQLTest() {
     @Test
     fun `count recyclable and low-fat products`() {
         executeSqlFile(connection,"sql/recyclable_and_low_fat_products_setup.sql")
-        executeSqlFile(connection, "sql/recyclable_and_low_fat_products_data.sql")
 
         val result = executeQuery(connection, "sql/recyclable_and_low_fat_products_query.sql")
 

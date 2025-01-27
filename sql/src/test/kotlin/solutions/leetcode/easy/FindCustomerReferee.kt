@@ -11,7 +11,6 @@ class FindCustomerReferee : SQLTest() {
     @Test
     fun `find customer referee`() {
         executeSqlFile(connection, "sql/find_customer_referee_setup.sql")
-        executeSqlFile(connection, "sql/find_customer_referee_data.sql")
 
         val actual = executeQuery(connection, "sql/find_customer_referee_query.sql")
         val expected = listOf(
