@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 import org.testcontainers.junit.jupiter.Testcontainers
-import ru.asipes.utils.DatabaseUtils.executeQuery
-import ru.asipes.utils.DatabaseUtils.executeSqlFile
 
 @Testcontainers
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -14,9 +12,9 @@ class BigCountries : SQLTest() {
 
     @Test
     fun `find big countries`() {
-        executeSqlFile(connection, "select/big_countries_setup.sql")
+        setup("select/big_countries_setup.sql")
 
-        val actual = executeQuery(connection, "select/big_countries_query.sql")
+        val actual = executeQuery("select/big_countries_query.sql")
 
         val expected = listOf(
             mapOf(

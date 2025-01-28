@@ -3,16 +3,14 @@ package solutions.leetcode.join
 import SQLTest
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import ru.asipes.utils.DatabaseUtils.executeQuery
-import ru.asipes.utils.DatabaseUtils.executeSqlFile
 
 class ReplaceEmployeeIDWithTheUniqueIdentifier : SQLTest() {
 
     @Test
     fun `select all employees`() {
-        executeSqlFile(connection, "join/replace_employee_id_with_the_uniqueIdentifier_setup.sql")
+        setup("join/replace_employee_id_with_the_uniqueIdentifier_setup.sql")
 
-        val actual = executeQuery(connection, "join/replace_employee_id_with_the_uniqueIdentifier_query.sql")
+        val actual = executeQuery("join/replace_employee_id_with_the_uniqueIdentifier_query.sql")
 
         val expected = listOf(
             mapOf("unique_id" to null, "name" to "Alice"),

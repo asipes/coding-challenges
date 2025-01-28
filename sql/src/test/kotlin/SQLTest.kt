@@ -4,6 +4,8 @@ import org.junit.jupiter.api.TestInstance
 import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.junit.jupiter.Container
 import org.testcontainers.junit.jupiter.Testcontainers
+import ru.asipes.utils.DatabaseUtils.executeQuery
+import ru.asipes.utils.DatabaseUtils.executeSqlFile
 import java.sql.Connection
 import java.sql.DriverManager
 
@@ -19,7 +21,7 @@ abstract class SQLTest {
         }
     }
 
-    protected lateinit var connection: Connection
+    private lateinit var connection: Connection
 
     @BeforeAll
     fun setupDatabase() {
@@ -33,5 +35,13 @@ abstract class SQLTest {
     @AfterAll
     fun tearDown() {
         connection.close()
+    }
+
+    protected fun setup(path: String) {
+        executeSqlFile(connection, path)
+    }
+
+    protected fun executeQuery(path: String) : List<Map<String, Any>> {
+        return executeQuery(connection, path)
     }
 }

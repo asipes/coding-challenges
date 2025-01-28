@@ -3,16 +3,14 @@ package solutions.leetcode.select
 import SQLTest
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
-import ru.asipes.utils.DatabaseUtils.executeQuery
-import ru.asipes.utils.DatabaseUtils.executeSqlFile
 
 class RecyclableAndLowFatProducts : SQLTest() {
 
     @Test
     fun `count recyclable and low-fat products`() {
-        executeSqlFile(connection,"select/recyclable_and_low_fat_products_setup.sql")
+        setup("select/recyclable_and_low_fat_products_setup.sql")
 
-        val result = executeQuery(connection, "select/recyclable_and_low_fat_products_query.sql")
+        val result = executeQuery("select/recyclable_and_low_fat_products_query.sql")
 
         val expected = listOf(
             mapOf("product_id" to 1),

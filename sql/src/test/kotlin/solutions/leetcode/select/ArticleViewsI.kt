@@ -3,16 +3,14 @@ package solutions.leetcode.select
 import SQLTest
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
-import ru.asipes.utils.DatabaseUtils.executeQuery
-import ru.asipes.utils.DatabaseUtils.executeSqlFile
 
 class ArticleViewsI : SQLTest() {
 
     @Test
     fun `find self viewed`() {
-        executeSqlFile(connection, "select/article_views_i_setup.sql")
+        setup("select/article_views_i_setup.sql")
 
-        val actual = executeQuery(connection, "select/article_views_i_query.sql")
+        val actual = executeQuery("select/article_views_i_query.sql")
 
         val expected = listOf(
             mapOf("id" to 4),
