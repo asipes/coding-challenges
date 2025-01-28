@@ -10,9 +10,9 @@ class InvalidTweets : SQLTest() {
 
     @Test
     fun `find invalid tweets`() {
-        executeSqlFile(connection, "sql/select/invalid_tweets_setup.sql")
+        executeSqlFile(connection, "select/invalid_tweets_setup.sql")
 
-        val actual = executeQuery(connection, "sql/select/invalid_tweets_query.sql")
+        val actual = executeQuery(connection, "select/invalid_tweets_query.sql")
 
         val expected = listOf(
             mapOf("tweet_id" to 2),

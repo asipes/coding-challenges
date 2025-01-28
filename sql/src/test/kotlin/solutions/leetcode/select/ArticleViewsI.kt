@@ -10,9 +10,9 @@ class ArticleViewsI : SQLTest() {
 
     @Test
     fun `find self viewed`() {
-        executeSqlFile(connection, "sql/select/article_views_i_setup.sql")
+        executeSqlFile(connection, "select/article_views_i_setup.sql")
 
-        val actual = executeQuery(connection, "sql/select/article_views_i_query.sql")
+        val actual = executeQuery(connection, "select/article_views_i_query.sql")
 
         val expected = listOf(
             mapOf("id" to 4),

@@ -10,9 +10,9 @@ class RecyclableAndLowFatProducts : SQLTest() {
 
     @Test
     fun `count recyclable and low-fat products`() {
-        executeSqlFile(connection,"sql/select/recyclable_and_low_fat_products_setup.sql")
+        executeSqlFile(connection,"select/recyclable_and_low_fat_products_setup.sql")
 
-        val result = executeQuery(connection, "sql/select/recyclable_and_low_fat_products_query.sql")
+        val result = executeQuery(connection, "select/recyclable_and_low_fat_products_query.sql")
 
         val expected = listOf(
             mapOf("product_id" to 1),

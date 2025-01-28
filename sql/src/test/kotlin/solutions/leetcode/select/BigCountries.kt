@@ -14,9 +14,9 @@ class BigCountries : SQLTest() {
 
     @Test
     fun `find big countries`() {
-        executeSqlFile(connection, "sql/select/big_countries_setup.sql")
+        executeSqlFile(connection, "select/big_countries_setup.sql")
 
-        val actual = executeQuery(connection, "sql/select/big_countries_query.sql")
+        val actual = executeQuery(connection, "select/big_countries_query.sql")
 
         val expected = listOf(
             mapOf(
