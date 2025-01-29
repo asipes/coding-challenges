@@ -7,7 +7,7 @@ import "sort"
 
 func lexicographicallySmallestArray(nums []int, limit int) []int {
 	n := len(nums)
-	dsu := model.NewDSU(0, n)
+	dsu := model.NewDSU(n)
 
 	for i := 0; i < n; i++ {
 		for j := i + 1; j < n; j++ {

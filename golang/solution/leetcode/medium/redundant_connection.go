@@ -10,7 +10,7 @@ func findRedundantConnection(edges [][]int) []int {
 		n = max(n, max(edge[0], edge[1]))
 	}
 
-	dsu := model.NewDSU(1, n+1)
+	dsu := model.NewDSU(n + 1)
 	var res [][]int
 
 	for _, edge := range edges {

@@ -5,11 +5,11 @@ type DSU struct {
 	Rank   []int
 }
 
-func NewDSU(start int, n int) *DSU {
+func NewDSU(n int) *DSU {
 	parent := make([]int, n)
 	rank := make([]int, n)
 
-	for i := start; i < n; i++ {
+	for i := 0; i < n; i++ {
 		parent[i] = i
 		rank[i] = 1
 	}
