@@ -6,5 +6,5 @@ SELECT id,
        rating
 FROM cinema
 WHERE id % 2 <> 0
-  AND description NOT IN ('boring')
+  AND description <> 'boring'
 ORDER BY rating DESC;
