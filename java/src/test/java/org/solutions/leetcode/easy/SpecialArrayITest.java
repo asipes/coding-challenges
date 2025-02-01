@@ -21,7 +21,10 @@ class SpecialArrayITest {
     @ParameterizedTest
     @MethodSource("provideIsArraySpecialTestCases")
     void isArraySpecial(int[] nums, boolean expected) {
-        var actual = new SpecialArrayI().isArraySpecial(nums);
-        assertEquals(expected, actual);
+        var actual1 = new SpecialArrayI().isArraySpecial(nums);
+        assertEquals(expected, actual1);
+
+        var actual2 = new SpecialArrayI().isArraySpecialV2(nums);
+        assertEquals(expected, actual2);
     }
 }
