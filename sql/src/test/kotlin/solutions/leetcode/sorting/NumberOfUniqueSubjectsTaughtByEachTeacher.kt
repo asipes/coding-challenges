@@ -12,6 +12,7 @@ class NumberOfUniqueSubjectsTaughtByEachTeacher : SQLTest() {
             mapOf<String, Number>("teacher_id" to 1, "cnt" to 2L),
             mapOf<String, Number>("teacher_id" to 2, "cnt" to 4L),
         )
+
         assertThat(actual)
             .containsExactlyInAnyOrderElementsOf(expected)
     }
