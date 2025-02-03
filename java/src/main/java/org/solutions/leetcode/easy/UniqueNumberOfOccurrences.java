@@ -29,6 +29,7 @@ public class UniqueNumberOfOccurrences {
 
         return freq.size() == new HashSet<>(freq.values()).size();
     }
+
     public boolean uniqueOccurrencesV1(int[] arr) {
 
         return Arrays.stream(arr)

@@ -24,4 +24,18 @@ class UniqueNumberOfOccurrencesTest {
         var actual = new UniqueNumberOfOccurrences().uniqueOccurrences(arr);
         assertEquals(expected, actual);
     }
+
+    @ParameterizedTest
+    @MethodSource("provideUniqueOccurrencesTestCases")
+    void uniqueOccurrencesV1(int[] arr, boolean expected) {
+        var actual = new UniqueNumberOfOccurrences().uniqueOccurrencesV1(arr);
+        assertEquals(expected, actual);
+    }
+
+    @ParameterizedTest
+    @MethodSource("provideUniqueOccurrencesTestCases")
+    void uniqueOccurrencesV2(int[] arr, boolean expected) {
+        var actual = new UniqueNumberOfOccurrences().uniqueOccurrencesV2(arr);
+        assertEquals(expected, actual);
+    }
 }
