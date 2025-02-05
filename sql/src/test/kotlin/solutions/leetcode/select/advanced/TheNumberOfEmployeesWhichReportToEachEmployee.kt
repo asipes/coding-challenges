@@ -1,4 +1,4 @@
-package solutions.leetcode.join.advanced
+package solutions.leetcode.select.advanced
 
 import SQLTest
 import org.junit.jupiter.api.Test
@@ -8,8 +8,8 @@ class TheNumberOfEmployeesWhichReportToEachEmployee : SQLTest() {
 
     @Test
     fun run() {
-        setup("join/advanced/the_number_of_employees_which_report_to_each_employee_setup.sql")
-        val actual = executeQuery("join/advanced/the_number_of_employees_which_report_to_each_employee_query.sql")
+        setup("select/advanced/the_number_of_employees_which_report_to_each_employee_setup.sql")
+        val actual = executeQuery("select/advanced/the_number_of_employees_which_report_to_each_employee_query.sql")
 
         val expected = listOf(
             mapOf("employee_id" to 1, "name" to "Michael", "reports_count" to 2, "average_age" to 40),

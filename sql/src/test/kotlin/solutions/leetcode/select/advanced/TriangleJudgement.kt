@@ -1,4 +1,4 @@
-package solutions.leetcode.join.advanced
+package solutions.leetcode.select.advanced
 
 import SQLTest
 import org.assertj.core.api.Assertions.assertThat
@@ -8,8 +8,8 @@ class TriangleJudgement : SQLTest() {
 
     @Test
     fun run() {
-        setup("join/advanced/triangle_judgement_setup.sql")
-        val actual = executeQuery("")
+        setup("select/advanced/triangle_judgement_setup.sql")
+        val actual = executeQuery("select/advanced/triangle_judgement_query.sql")
 
         val expected = listOf(
             mapOf("x" to 13, "y" to 15, "z" to 30, "triangle" to "No"),

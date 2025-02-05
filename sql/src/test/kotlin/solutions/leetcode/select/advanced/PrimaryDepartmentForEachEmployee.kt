@@ -1,4 +1,4 @@
-package solutions.leetcode.join.advanced
+package solutions.leetcode.select.advanced
 
 import SQLTest
 import org.assertj.core.api.Assertions.assertThat
@@ -8,8 +8,8 @@ class PrimaryDepartmentForEachEmployee : SQLTest() {
 
     @Test
     fun run() {
-        setup("join/advanced/primary_department_for_each_employee_setup.sql")
-        val actual = executeQuery("join/advanced/primary_department_for_each_employee_query.sql")
+        setup("select/advanced/primary_department_for_each_employee_setup.sql")
+        val actual = executeQuery("select/advanced/primary_department_for_each_employee_query.sql")
 
         val expected = listOf(
             mapOf("employee_id" to 1, "department_id" to 1),
