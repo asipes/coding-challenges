@@ -1,8 +1,8 @@
 package solutions.leetcode.subqueries
 
 import SQLTest
-import org.junit.jupiter.api.Test
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 class DepartmentTopThreeSalaries : SQLTest() {
 
@@ -12,12 +12,12 @@ class DepartmentTopThreeSalaries : SQLTest() {
         val actual = executeQuery("subqueries/department_top_three_salaries_query.sql")
 
         val expected = listOf(
-            mapOf("Department" to "IT", "Employee" to "Max", "Salary" to 90000),
-            mapOf("Department" to "IT", "Employee" to "Joe", "Salary" to 85000),
-            mapOf("Department" to "IT", "Employee" to "Randy", "Salary" to 85000),
-            mapOf("Department" to "IT", "Employee" to "Will", "Salary" to 70000),
-            mapOf("Department" to "Sales", "Employee" to "Henry", "Salary" to 80000),
-            mapOf("Department" to "Sales", "Employee" to "Sam", "Salary" to 60000)
+            mapOf("department" to "IT", "employee" to "Max", "salary" to 90000),
+            mapOf("department" to "IT", "employee" to "Joe", "salary" to 85000),
+            mapOf("department" to "IT", "employee" to "Randy", "salary" to 85000),
+            mapOf("department" to "IT", "employee" to "Will", "salary" to 70000),
+            mapOf("department" to "Sales", "employee" to "Henry", "salary" to 80000),
+            mapOf("department" to "Sales", "employee" to "Sam", "salary" to 60000)
         )
         assertThat(actual)
             .containsExactlyInAnyOrderElementsOf(expected)
