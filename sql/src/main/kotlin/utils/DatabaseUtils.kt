@@ -50,4 +50,17 @@ object DatabaseUtils {
 
         return results
     }
+
+    fun executeDelete(connection: Connection, filePath: String) {
+        val sql = this::class.java.classLoader.getResourceAsStream(filePath)
+            ?.bufferedReader()
+            ?.use { it.readText() }
+            ?: throw IllegalArgumentException("File $filePath not found")
+
+        connection.createStatement().use { stmt ->
+            val rowsAffected = stmt.executeUpdate(sql)
+            println("Query executed successfully. Rows affected: $rowsAffected")
+        }
+    }
+
 }

@@ -4,6 +4,7 @@ import org.junit.jupiter.api.TestInstance
 import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.junit.jupiter.Container
 import org.testcontainers.junit.jupiter.Testcontainers
+import ru.asipes.utils.DatabaseUtils.executeDelete
 import ru.asipes.utils.DatabaseUtils.executeQuery
 import ru.asipes.utils.DatabaseUtils.executeSqlFile
 import java.sql.Connection
@@ -43,5 +44,9 @@ abstract class SQLTest {
 
     protected fun executeQuery(path: String) : List<Map<String, Any>> {
         return executeQuery(connection, path)
+    }
+
+    protected fun executeDelete(path: String) {
+        executeDelete(connection, path)
     }
 }
