@@ -23,4 +23,11 @@ class ClearDigitsTest {
         var actual = new ClearDigits().clearDigits(s);
         assertEquals(expected, actual);
     }
+
+    @ParameterizedTest
+    @MethodSource("provideClearDigits")
+    void clearDigitsV1(String s, String expected) {
+        var actual = new ClearDigits().clearDigitsV1(s);
+        assertEquals(expected, actual);
+    }
 }
