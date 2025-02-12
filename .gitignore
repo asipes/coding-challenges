@@ -15,3 +15,42 @@ out/
 Thumbs.db
 *.salive
 .kotlin/
+# Игнорируем SBT артефакты и кеши
+/.bloop/
+/.metals/
+/.idea/
+/.vscode/
+/.cache/
+/logs/
+/target/
+/project/target/
+/project/project/
+project/metals.sbt
+project/target/
+
+# Scala скомпилированные файлы
+*.class
+*.tasty
+*.lock
+*.snapshot
+
+# Игнорируем файлы потоков и кеши компиляции
+**/streams/
+**/streams/**/*
+**/update_cache_*
+**/compileOutputs/
+**/dependencyClasspathFiles/
+**/dependencyPositions/
+**/sync/
+**/test-sync/
+**/previous/
+**/output/
+**/output_dsp/
+
+# Игнорируем кеши компиляции
+**/*.cache
+**/zinc/
+**/inc_compile_*.zip
+
+# Игнорируем BSP (Build Server Protocol) файлы
+/.bsp/
