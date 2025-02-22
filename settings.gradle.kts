@@ -11,9 +11,6 @@ project(":java").projectDir = file("java")
 include("sql")
 project(":sql").projectDir = file("sql")
 
-include("scala")
-project(":scala").projectDir = file("scala")
-
 include("python")
 project(":python").projectDir = file("python")
 
