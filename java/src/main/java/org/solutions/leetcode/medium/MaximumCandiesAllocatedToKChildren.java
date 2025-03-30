@@ -9,15 +9,15 @@ import java.util.Arrays;
 public class MaximumCandiesAllocatedToKChildren {
     public int maximumCandies(int[] candies, long k) {
         int result = 0;
-        int left = 1;
-        int right = Arrays.stream(candies).max().orElse(0);
+        long left = 1;
+        long right = Arrays.stream(candies).max().orElse(0);
 
         while (left <= right) {
-            int mid = (left + right) / 2;
-            int count = calculateBunch(candies, mid);
+            long mid = (left + right) / 2;
+            long count = calculateBunch(candies, mid);
 
             if (count >= k) {
-                result = mid;
+                result = (int) mid;
                 left = mid + 1;
             } else {
                 right = mid - 1;
@@ -27,9 +27,9 @@ public class MaximumCandiesAllocatedToKChildren {
         return result;
     }
 
-    private int calculateBunch(int[] candies, int mid) {
-        int result = 0;
-        for (int candy : candies) {
+    private long calculateBunch(int[] candies, long mid) {
+        long result = 0;
+        for (long candy : candies) {
             result += candy / mid;
         }
 
